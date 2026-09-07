@@ -32,6 +32,13 @@ body {
     border-radius: 5px;
 }
 
+.btn-primario{
+    background-color: #28a13db9;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+}
+
 /* CORREÇÃO: Alterado de #input-tarefas para #input-tarefa */
 #input-tarefa {
     flex-grow: 1;
