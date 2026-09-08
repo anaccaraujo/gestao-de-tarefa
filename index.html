@@ -4,51 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciador de Tarefas</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header class="cabecalho">
         <h1>Minhas Tarefas</h1>
-
-        <form id="form-tarefa">
-            <input type="text" id="input-tarefa" placeholder="Título da tarefa..." required>
-            <input type="date" id="input-data">
-            <button type="submit" class="btn-primario">Adicionar</button>
-        </form>
-
     </header>
-
+ 
     <main class="area-principal">
 
-        <div class="status">
-            <div class="filtros" id="botoes-filtros">
-                <!-- CORREÇÃO: alterado de data-filtros para data-filtro -->
-                <button data-filtro="todas" class="ativo">Ver Todos</button>
-                <button data-filtro="pendentes">Pendentes</button>
-                <button data-filtro="concluidas">Concluídas</button>
+        <div class="painel-form">
+            <form id="form-tarefa">
+                <input type="text" id="input-tarefa" placeholder="Título da tarefa..." required>
+                <input type="date" id="input-data">
+                <button type="submit" class="btn-primario">Adicionar</button>
+            </form>
+ 
+            <div class="status">
+                <div class="filtros" id="botoes-filtros">
+                    <button data-filtro="todas" class="ativo">Ver Todos</button>
+                    <button data-filtro="pendentes">Pendentes</button>
+                    <button data-filtro="concluidas">Concluídas</button>
+                </div>
+                <p class="contador-texto">Tarefas pendentes: <span id="contador">0</span></p>
             </div>
-            <p class="contador-texto">Tarefas pendentes: <span id="contador">0</span></p>
         </div>
-
+ 
          <div class="quadro-kanban">
  
             <section class="kanban-coluna" id="col-pendentes">
-                <h2 class="titulo-coluna text-azul">🕒 Pendentes</h2>
+                <h2 class="titulo-coluna text-azul">🕒 Pendentes </h2>
                 <ul class="lista-tarefas" data-status="pendente"></ul>
             </section>
  
             <section class="kanban-coluna" id="col-concluidas">
-                <h2 class="titulo-coluna text-verde">✔️ Concluídas</h2>
+                <h2 class="titulo-coluna text-verde">✔️ Concluídas </h2>
                 <ul class="lista-tarefas" data-status="concluida"></ul>
             </section>
  
         </div>
     </main>
-
+ 
     <footer class="rodape">
         <p>&copy; 2026 Ana Carla. Todos os direitos reservados.</p>
     </footer>
     
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
