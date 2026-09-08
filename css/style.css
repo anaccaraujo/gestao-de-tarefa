@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:'Times New Roman', Times, serif;
+    background-color: #f0f4f8;
+    color: #020202;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.cabecalho, .area-principal {
+    width: 100%;
+    max-width: 960px;
+}
+
+.painel-form {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px 24px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    margin: 20px 0;
+}
+
+#form-tarefa {
+    display: flex;
+    gap: 10px;
+    margin: 0 0 16px 0; 
+    flex-wrap: wrap;
+}
+
+#form-tarefa input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn-primario{
+    background-color: #093755de;
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+}
+
+#input-tarefa {
+    flex-grow: 1;
+}
+
+.status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filtros button {
+    border: none;
+    border-radius: 999px;
+    padding: 8px 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.filtros button[data-filtro="todas"] { background: #dce3f5; color: #33415c; }
+.filtros button[data-filtro="pendentes"] { background: #f7dfc0; color: #92600f; }
+.filtros button[data-filtro="concluidas"] { background: #cdeee0; color: #1f6f56; }
+
+.filtros button.ativo{
+    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.15);
+}
+
+.quadro-kanban {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.kanban-coluna {
+    flex: 1;
+    background: #ffffff;
+    min-width: 300px;
+    border-radius: 16px; 
+    padding: 16px;
+}
+
+.kanban-coluna.escondida {
+    display: none;
+}
+
+.titulo-coluna {
+    font-size: 18px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.text-azul {color: #00204b;}
+.text-verde {color: #046900;}
+
+.lista-tarefas {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.tarefa {
+    background: #fff;
+    padding: 12px 14px;
+    border: 1px solid #e0e0e0;
+    border-left: 4px solid #093655;
+    border-radius: 12px; 
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    animation: surgir 0.3s ease-out forwards;
+    transition: all 0.3s ease;
+}
+
+.tarefa-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tarefa-texto{
+    cursor: pointer;
+    flex-grow: 1;
+}
+
+.tarefa-data{
+    font-size: 13px;
+    color: #666;
+}
+
+.tarefa-acoes{
+    display: flex;
+    gap: 8px;
+}
+
+.tarefa-acoes button{
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.tarefa.concluida{
+    border-left-color: #197540;
+    opacity: 0.75;
+}
+
+.tarefa.concluida .tarefa-texto {
+    text-decoration: line-through;
+    color: #777;
+}
+
+.lista-vazia {
+    background: #fafbfc;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
+    color: #555;
+}
+
+.lista-vazia .icone-vazio {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.lista-vazia .subtexto {
+    display: block;
+    color: #999;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.rodape {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f0f4f8; 
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1); 
+    z-index: 10;
+}
+
+body {
+    padding-bottom: 60px; 
+}
+
+@media (max-width: 768px) {
+    .quadro-kanban {
+        gap: 12px;
+    }
+ 
+    #form-tarefa {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+ 
+@media (max-width: 480px) {
+    body {
+        padding: 12px;
+    }
+ 
+    .quadro-kanban {
+        flex-direction: column;
+    }
+ 
+    .status {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@keyframes surgir {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
